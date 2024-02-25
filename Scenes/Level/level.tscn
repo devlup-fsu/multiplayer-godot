@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cop1g8ipe643h"]
+
+[ext_resource type="Script" path="res://Scenes/Level/level.gd" id="1_5uqwj"]
+[ext_resource type="Script" path="res://Scenes/Level/player_spawner.gd" id="2_q2nei"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_5uqwj")
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Entities/Player/player.tscn")
+spawn_path = NodePath("../Players")
+spawn_limit = 4
+script = ExtResource("2_q2nei")

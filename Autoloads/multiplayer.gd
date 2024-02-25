@@ -5,12 +5,9 @@ const PORT = 4433
 signal game_started
 
 
-func _ready():
-	# Start the game paused.
-	get_tree().paused = true
-	
+func _ready():	
 	# Automatically start the server in headless mode.
-	if DisplayServer.get_name() == "headless":
+	if OS.has_feature("dedicated_server"):
 		print("Automatically starting dedicated server.")
 		start_server()
 
